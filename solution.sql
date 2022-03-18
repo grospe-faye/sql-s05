@@ -49,8 +49,10 @@ SELECT customerName, country FROM customers
 	WHERE country = "USA" OR country = "FRANCE" OR country = "CANADA";
 
 -- 14. Return the first name, last name, and office's city of employees whose offices are in Tokyo
-SELECT firstName, lastName FROM employees
-	JOIN offices ON offices.officeCode = employees.officeCode
+SELECT emp.firstName, emp.lastName , off.city
+	FROM employees AS emp
+	JOIN offices AS off
+	ON off.officeCode = emp.officeCode
 	WHERE city = "TOKYO";
 
 -- 15. Return the customer names of customers who were served by the employee named 'Leslie Thompson'
