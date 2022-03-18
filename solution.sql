@@ -42,12 +42,21 @@ SELECT productLine FROM productlines
 SELECT DISTINCT country FROM customers;
 
 -- 12. Return the statuses of orders without duplication
+SELECT DISTINCT status FROM orders;
 
 -- 13. Return the customer names and countries of customers whose country is USA, France or Canada
+SELECT customerName, country FROM customers
+	WHERE country = "USA" OR country = "FRANCE" OR country = "CANADA";
 
 -- 14. Return the first name, last name, and office's city of employees whose offices are in Tokyo
+SELECT firstName, lastName FROM employees
+	JOIN offices ON offices.officeCode = employees.officeCode
+	WHERE city = "TOKYO";
 
 -- 15. Return the customer names of customers who were served by the employee named 'Leslie Thompson'
+SELECT customerName FROM customers
+	JOIN employees ON employees.employeeNumber = customers.salesRepEmployeeNumber
+	WHERE lastName = "Thompson" AND firstName = "Leslie";
 
 -- 16. Return the product names and customer name of products ordered by "Baane Mini Imports"
 
@@ -55,6 +64,10 @@ SELECT DISTINCT country FROM customers;
 
 
 -- 18. Return the last names and first names of employees being supervised by "Anthony Bow"
+SELECT lastName, firstName FROM employees
+	JOIN employees ON employees.employeeNumber = customers.salesRepEmployeeNumber
+	WHERE lastName = "Thompson" AND firstName = "Leslie";
+
 
 -- 19. Return the product name and MSRP of the product with the highest MSRP
 
