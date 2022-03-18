@@ -19,16 +19,27 @@ SELECT customerName FROM customers
 	WHERE state IS NULL;
 
 -- 6. Return the first name, last name, email of the employee whose last name is Patterson and first name is Steve
+SELECT firstName, lastName, email FROM employees
+	WHERE lastName = 'PATTERSON' AND firstName = "STEVE";
 
 -- 7. Return customer name, country, and credit limit of customers whose countries are NOT USA and whose credit limits are greater than 3000
+SELECT customerName, country, creditLimit FROM customers
+	WHERE country != "USA" AND creditLimit > 3000; 
 
 -- 8. Return the customer names of customers whose customer names dont have 'a' in them
+SELECT customerName FROM customers
+	WHERE customerName NOT LIKE "%a%";
 
 -- 9. Return the customer numbers of orders whose comments contain the string 'DHL'
+SELECT customerNumber FROM orders
+	WHERE comments LIKE "%DHL%";
 
 -- 10. Return the product lines whose text description mentions the phrase 'state of the art'
+SELECT productLine FROM productlines
+	WHERE textDescription LIKE "%state of the art%";
 
--- 11. Return the countries of orders without duplication
+-- 11. Return the countries of customers without duplication
+SELECT DISTINCT country FROM customers;
 
 -- 12. Return the statuses of orders without duplication
 
