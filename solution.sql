@@ -84,4 +84,6 @@ SELECT customerNumber FROM customers
 	JOIN employees ON employees.employeeNumber = customers.salesRepEmployeeNumber
 
 -- 23. Return the product name and quantity in stock of products that belong to the product line "planes" with stock quantities less than 1000
+SELECT productName, quantityInStock FROM products
+	WHERE productLine = "Planes" AND quantityInStock < 1000;
 
