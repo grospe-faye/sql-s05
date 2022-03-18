@@ -70,7 +70,7 @@ SELECT emp.firstName, emp.lastName, cust.customerName, off.country
 	FROM employees AS emp
 	JOIN customers AS cust
 	JOIN offices AS off
-	WHERE cust.country ==  off.country;
+	WHERE cust.country = off.country;
 
 -- 18. Return the last names and first names of employees being supervised by "Anthony Bow"
 SELECT lastName, firstName FROM employees
