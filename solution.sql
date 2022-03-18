@@ -77,9 +77,11 @@ SELECT customerNumber FROM customers
 	WHERE country = "UK";
 
 -- 21. Return the number of products per product line
+SELECT productCode FROM products;
 
-
--- 22. Return the number of products served by every employee
-
+-- 22. Return the number of customers served by every employee
+SELECT customerNumber FROM customers
+	JOIN employees ON employees.employeeNumber = customers.salesRepEmployeeNumber
 
 -- 23. Return the product name and quantity in stock of products that belong to the product line "planes" with stock quantities less than 1000
+
