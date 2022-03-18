@@ -59,10 +59,18 @@ SELECT customerName FROM customers
 	WHERE lastName = "Thompson" AND firstName = "Leslie";
 
 -- 16. Return the product names and customer name of products ordered by "Baane Mini Imports"
+SELECT prod.productName, cust.customerName
+	FROM products AS prod
+	JOIN customers AS cust
+	WHERE customerName = "Baane Mini Imports";
 
 
 -- 17. Return the employee's first names, employee's last names, customer's names, and office's countries of transactions whose customers and offices are in the same country
-
+SELECT emp.firstName, emp.lastName, cust.customerName, off.country
+	FROM employees AS emp
+	JOIN customers AS cust
+	JOIN offices AS off
+	WHERE cust.country ==  off.country;
 
 -- 18. Return the last names and first names of employees being supervised by "Anthony Bow"
 SELECT lastName, firstName FROM employees
