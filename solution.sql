@@ -1,6 +1,10 @@
 -- 1. Return the customerName of the customers who are from the Philippines
+SELECT customerName FROM customers
+	WHERE country = "Philippines";
 
 -- 2. Return the contactLastName and contactFirstName of customers with the name "La Rochelle Gifts"
+SELECT contactLastName, contactFirstName FROM customers 
+	WHERE customerName = "La Rochelle Gifts";
 
 -- 3. Return the product name and MSRP of the product named "The Titanic"
 
