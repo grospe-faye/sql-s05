@@ -60,21 +60,26 @@ SELECT customerName FROM customers
 
 -- 16. Return the product names and customer name of products ordered by "Baane Mini Imports"
 
+
 -- 17. Return the employee's first names, employee's last names, customer's names, and office's countries of transactions whose customers and offices are in the same country
 
 
 -- 18. Return the last names and first names of employees being supervised by "Anthony Bow"
 SELECT lastName, firstName FROM employees
-	JOIN employees ON employees.employeeNumber = customers.salesRepEmployeeNumber
-	WHERE lastName = "Thompson" AND firstName = "Leslie";
-
+	WHERE reportsTo = 1143;
 
 -- 19. Return the product name and MSRP of the product with the highest MSRP
+SELECT productName, MSRP FROM products
+	ORDER BY MSRP DESC LIMIT 1;
 
 -- 20. Return the number of customers in the UK
+SELECT customerNumber FROM customers
+	WHERE country = "UK";
 
--- 21. Reeturn the number of products per product line
+-- 21. Return the number of products per product line
+
 
 -- 22. Return the number of products served by every employee
 
--- 230 Return the product name and quantity in stock of products that belong to the product line "planes" with stock quantities less than 1000
+
+-- 23. Return the product name and quantity in stock of products that belong to the product line "planes" with stock quantities less than 1000
