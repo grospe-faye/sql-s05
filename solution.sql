@@ -7,10 +7,16 @@ SELECT contactLastName, contactFirstName FROM customers
 	WHERE customerName = "La Rochelle Gifts";
 
 -- 3. Return the product name and MSRP of the product named "The Titanic"
+SELECT productName, MSRP FROM products
+	WHERE productName = "The Titanic";
 
 -- 4. Return the first and last name of the employee whose email is "jfirrelli@classicmodelcars.com"
+SELECT firstName, lastName FROM employees
+	WHERE email = "jfirrelli@classicmodelcars.com";
 
 -- 5. Return the names of customers who have no registered state
+SELECT customerName FROM customers 
+	WHERE state IS NULL;
 
 -- 6. Return the first name, last name, email of the employee whose last name is Patterson and first name is Steve
 
